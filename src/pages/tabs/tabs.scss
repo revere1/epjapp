@@ -1,0 +1,17 @@
+page-tabs {
+    .tabbar.show-tabbar {
+        top:50px !important;
+        height: 45px !important;
+    }
+    .toolbar {
+        border-bottom: 1px solid lightgray;
+    }
+    .tabs .tab-button {
+        min-height: 4.6rem; 
+    }
+    .tabs-md .tab-button[aria-selected=true] {
+        color:orangered;
+        border-bottom: 0.5px solid #f87946;
+
+    }
+}

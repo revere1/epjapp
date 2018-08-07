@@ -1,0 +1,46 @@
+page-cart {
+    .btn .row {
+        border: 0.5px solid lightgray;
+        border-radius: 50px;
+        text-align: center;
+    }
+    .scroll-content {
+        padding: 0px !important;
+        margin-top: 56px !important; 
+    }
+    .currency-col {
+        text-align: end;
+        margin-top: 40px;
+    }
+    .address {
+       float: right;
+       color: #427feb
+    }
+    .total.item-inner {
+        border-bottom:0 !important;
+    }
+    .button {
+        background-color: #51d054;
+    }
+    .cart-list .item {
+        border-bottom: 0px !important;
+    }
+    .footer-md::before,.menu-inner > ion-footer {
+        position: fixed;
+    }
+    .list .item-block .item-inner {
+        border-bottom: 0px solid #dedede !important; 
+    }
+    .item .item-block .item-inner {
+        padding-right: 8px;
+        border-bottom: 0px solid #dedede !important; 
+    }
+    .empty-bag {
+        text-align: center;
+        margin-top: 15%;
+    }
+    .empty-bag .button {
+        box-shadow : none !important;
+        border-radius: 10px;
+    }
+}

@@ -1,0 +1,143 @@
+page-home {
+    .item-icon img{
+        height: 30px;
+        width: 40px;
+    }
+    .content .col {
+        border-left:  0.5px solid #ececec;
+        border-bottom: 0.5px solid #ececec;
+    }
+    // .content .row {
+    //     border-bottom: 0.5px solid #ececec;
+    // }
+    .content .col:nth-child(4n+1) {
+        border-left: none;
+    }
+    .content .col:nth-child(4n+4) {
+        border-right: none;
+    }
+    .scroll-content {
+        text-align: center;
+    }
+    .icon-circle {
+        border: 1px solid #4eb950;
+        height: 1.5em;
+        width: 1.5em;
+        border-radius: 12px;
+        margin: 0 auto;
+    }
+    .searchbar .searchbar-search-icon {
+        right: 15px !important;
+        left: unset !important;
+        top :15px !important;
+        background-size: 25px;
+    }
+    .toolbar-background {
+        background-image: url('../assets/imgs/bg.png')!important;
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+    }
+    .arrow {
+        margin-top: 5px;
+        height :10px;
+    }
+    .toolbar {
+        min-height: 70px !important;
+        padding-right: 5px;
+    }
+    .searchbar .searchbar-input {
+        padding: 10px 20px !important;
+    }
+    .text-alignment,.text-alignment div {
+        float: left;
+    }
+    p {
+        font-size: 10px !important;
+    }
+    // .searchbar {
+    //     margin-bottom: 7px;
+    // }
+    .card {
+        width:46%;
+        margin: 5px;
+        box-shadow: none !important;
+    }
+    ion-card.card {
+        min-height: 200px;
+        display: inline-table;
+        padding-right: 10px;
+    }
+    .card p {
+        font-size: 1.2rem;
+        text-align: left !important;
+        font-size: 1.2rem !important; 
+    }
+    .card-md + ion-card {
+        margin-top: 8px;
+    }
+    .price {
+        color: #2f9a4f;
+    }
+    .scroll-zoom-wrapper {
+        white-space: nowrap;
+    }
+
+    ion-scroll {
+        min-height: 220px; 
+        height: auto;
+            .scroll-content {
+            padding: 0px !important;
+        }    
+    }
+    .searchbar-has-value.searchbar-has-focus{
+        .searchbar-search-icon {
+            display: none !important;
+        }
+    }
+    .toolbar .searchbar-ios .searchbar-input {
+        min-height: 40px;
+        background-color: white;
+    }
+    .searchbar-wp .searchbar-input-container  {
+        background-color: white;
+        border: none !important;
+    }
+    .toggle-btn {
+        padding-top: 10px ;
+        padding-bottom: 10px;
+    }
+    .toggle-btn img {
+        height: 35px;
+        margin-left: 95px;
+        margin-top: -7px;
+    }
+    .toolbar .searchbar {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .bar-button:first-child {
+        margin-left: -7%;
+    }
+    .searchbar-ios .searchbar-search-icon {
+        right: 20px !important;
+        left: unset !important;
+        top: 15px !important;
+        background-size: 15px;
+    }
+    .count {
+        position: absolute;
+        width: 18px;
+        height: 18px;
+        top: -3px;
+        left: 19px;
+        background: #f8631a;
+        font-size: 1.2rem;
+        color: #ffffff;
+        text-align: center;
+        border-radius: 50%;
+        line-height: 1.7rem;
+        border: 0.5px solid #fff;
+    }
+
+}

@@ -1,0 +1,56 @@
+page-signup {
+    .background {
+        background-image: url('../assets/imgs/bg.png');
+		background-repeat: no-repeat;
+        background-size:100%;
+    }
+    .img-position {
+        height:80px;
+        margin-top: 50px;
+        margin-bottom: 25px;
+    }
+    .scroll-content {
+        padding-bottom: 0px !important;
+        text-align: center;
+    }
+    .list .item-block .item-inner {
+        border-bottom: 1px solid #dedede !important;
+        margin-left: 20px;
+        margin-right: 30px;
+    }
+    .button-round {
+        background-color: #4eb950;
+        padding: 0px 8.7rem;
+        margin-top:50px;
+    }
+    ion-icon {
+        margin-top: 33px !important;
+        color: #dedede;
+        font-size: 2.5rem !important;
+    }
+    .card {
+        box-shadow:  none !important;
+        border-radius: 10px ;
+    }
+    p {
+        margin: 5px 0 2px !important;
+    }
+    a {
+        color:#4eb950 !important;
+    }
+    ion-input {
+        font-size: 14px; 
+    }
+    ion-label {
+        font-size: 12px !important; 
+    }
+    .text-input-wp {
+        border: 0px !important;
+    }
+    .button {
+        box-shadow:  none !important;
+    }
+    .button.activated {
+        background-color: #4eb950 !important;
+    }
+}

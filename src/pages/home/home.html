@@ -1,0 +1,84 @@
+<ion-header>
+  <ion-navbar>
+    <ion-row>
+      <ion-col>
+        <ion-buttons start>
+          <button ion-button icon-start clear menuToggle>
+            <ion-icon name="menu"></ion-icon>
+          </button>
+        </ion-buttons>
+      </ion-col>
+      <ion-col center text-center>
+        <button ion-button icon-start clear small>
+          <img src="assets/imgs/search-icon.svg" style="margin-top: -7px;height: 30px;">
+        </button>
+      </ion-col>
+      <ion-col>
+        <ion-buttons end>
+          <button ion-button icon-end clear (click)="cart()">
+            <ion-icon ios="ios-cart" md="md-cart"></ion-icon>
+            <div class="count" *ngIf="cartCount">{{cartCount}}</div>
+          </button>
+        </ion-buttons>
+      </ion-col>
+    </ion-row>
+    <ion-searchbar>
+    </ion-searchbar>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <ion-grid class="content">
+    <ion-row align-items-center class="item-icon">
+      <ion-col col-3 (click)="items(category.id,category?.category_name)" *ngFor="let category of categories | slice:0:8 ">
+        <div>
+          <img [src]="server_api+category?.path">
+          <p>{{category?.category_name}}</p>
+        </div>
+      </ion-col>
+    </ion-row>
+    <div class="icon-circle">
+      <img src="assets/imgs/down-arrow.svg" class="arrow" (click)="allCategories()">
+    </div>
+  </ion-grid>
+
+  <div style="margin-top: 10px;">
+    <img src="assets/imgs/add.jpg">
+  </div>
+
+  <ion-label>
+    <span style="float: left;">
+      <b>SPECIAL ITEMS </b>
+    </span>
+    <a style="float: right;">View All</a>
+  </ion-label>
+  <ion-scroll scrollX="true" direction="x">
+    <ion-card>
+      <ion-col>
+        <div>
+          <img src="assets/imgs/ganesha.jpg" style="max-height: 130px;" />
+        </div>
+        <p>Wall Hanging of Lord Ganesha</p>
+        <p class="price">₹8,000.00</p>
+      </ion-col>
+    </ion-card>
+    <ion-card>
+      <ion-col>
+        <div>
+          <img src="assets/imgs/lakshmi.jpg" style=" max-height: 130px;" />
+        </div>
+        <p>Wall Hanging of Lakshmi Devi with 9 bells</p>
+        <p class="price">₹7,000.00</p>
+      </ion-col>
+    </ion-card>
+    <ion-card>
+      <ion-col col-3>
+        <div>
+          <img src="assets/imgs/ganesha.jpg" style="    max-height: 130px;" />
+        </div>
+        <p>Wall Hanging of Lord Ganesha</p>
+        <p class="price">₹8,000.00</p>
+      </ion-col>
+    </ion-card>
+  </ion-scroll>
+
+</ion-content>

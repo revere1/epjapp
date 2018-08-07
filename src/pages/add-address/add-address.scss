@@ -1,0 +1,24 @@
+page-add-address {
+    .scroll-content {
+        padding-bottom: 0px !important;
+    }
+    .item-block:last-child .item-inner {
+        border-bottom: 1px solid #dedede !important;
+    }
+    .button {
+        background-color: #2ec95c !important;
+        box-shadow: none !important;
+    }
+    .select .select-icon {
+        right: 25px  !important;
+        position: absolute;
+        bottom: 10px;
+    }
+    .select .select-placeholder,.select-text{
+        margin-left: -15% !important;
+        padding-top: 15px;
+    }
+    .item.item-input.ng-invalid.ng-touched:not(.input-has-focus):not(.item-input-has-focus) .item-inner {
+        border-bottom-color: #dedede;
+    }
+}

@@ -1,0 +1,57 @@
+<!--
+  Generated template for the ProductViewPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{productDetails?.product_name | titlecase}}</ion-title>
+    <ion-buttons end>
+      <button ion-button clear (click)="watchList()">
+        <ion-icon name="bookmark"></ion-icon>
+      </button>
+      <button ion-button clear (click)="share()">
+        <ion-icon name="share"></ion-icon>
+      </button>
+      <button ion-button clear (click)="cart()">
+        <ion-icon name="cart"></ion-icon>
+        <div class="count" *ngIf="cartCount">{{cartCount}}</div>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-slides pager style="background-color: white;">
+    <ion-slide *ngFor="let slide of slides">
+      <img [src]="server_api+slide.path" class="slide-image"  onError="this.src='assets/imgs/noimage.png'"/>
+    </ion-slide>
+  </ion-slides>
+  <div class="product-details">
+    <p>
+      Product Code : {{productDetails?.product_code}}</p>
+    <p class="currency">{{productDetails?.cost | currency:'INR'}}</p>
+    <div>
+      <img src="assets/imgs/truck.svg" class="img-resize">
+      <p class="p-resize">{{productDetails?.delivery_days}} days for delivery</p>
+    </div>
+  </div>
+  <br>
+  <button ion-item (click)="ViewDetails()">
+    View Details
+    <i class="fa fa-chevron-right" aria-hidden="true"></i>
+  </button>
+
+  <br>
+  <button ion-item (click)="WriteReview()">
+    Write Review
+    <i class="fa fa-chevron-right" aria-hidden="true"></i>
+  </button>
+</ion-content>
+<ion-footer>
+  <button ion-button large full (click)="addCart()">Buy for {{productDetails?.cost | currency:'INR'}}</button>
+</ion-footer>

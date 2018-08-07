@@ -1,0 +1,55 @@
+<!--
+  Generated template for the SignupPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+
+<ion-content padding class="background">
+  <img src="assets/imgs/splash.svg" class="img-position">
+  <ion-card>
+    <form [formGroup]="signUpForm" (ngSubmit)="signUp()">
+      <ion-list>
+        <ion-item>
+          <ion-label floating>Full Name</ion-label>
+          <ion-icon name="person" item-right></ion-icon>
+          <ion-input type="text" formControlName="user_name"></ion-input>
+        </ion-item>
+        <div class="error">
+          <p *ngIf="signUpForm.controls.user_name.hasError('required') && signUpForm.controls.user_name.touched">Username is required!</p>
+          <p *ngIf="signUpForm.controls.user_name.hasError('pattern') && signUpForm.controls.user_name.touched">only small and capital letters are allowed!</p>
+          <p *ngIf="signUpForm.controls.user_name.hasError('minlength') && signUpForm.controls.user_name.touched"> Minimum username length is 6!</p>
+          <p *ngIf="signUpForm.controls.user_name.hasError('maxlength') && signUpForm.controls.user_name.touched"> Maximum username length is 30!</p>
+        </div>
+
+        <ion-item>
+          <ion-label floating>Email ID</ion-label>
+          <ion-icon name="mail" item-right></ion-icon>
+          <ion-input type="text" formControlName="user_email"></ion-input>
+        </ion-item>
+
+        <div class="error">
+          <p *ngIf="signUpForm.controls.user_email.hasError('required') && signUpForm.controls.user_email.touched"> Email is required!</p>
+          <p *ngIf="signUpForm.controls.user_email.hasError('email') && signUpForm.controls.user_email.touched">Enter valid email!</p>
+        </div>
+
+        <ion-item>
+          <ion-label floating>Password</ion-label>
+          <ion-icon name="lock" item-right></ion-icon>
+          <ion-input type="password" formControlName="password"></ion-input>
+        </ion-item>
+
+        <div class="error">
+          <p *ngIf="signUpForm.controls.password.hasError('required') && signUpForm.controls.password.touched">Password is required!</p>
+          <p *ngIf="signUpForm.controls.password.hasError('minlength') && signUpForm.controls.password.touched">Minimum password length is 8!</p>
+        </div>
+        <button ion-button round [disabled]="!signUpForm.valid">SIGN UP</button>
+
+      </ion-list>
+    </form>
+    <p><small>Alredy have a account?
+      <a (click)="signIn()">Sign In</a></small>
+    </p>
+  </ion-card>
+</ion-content>

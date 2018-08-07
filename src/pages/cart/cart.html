@@ -1,0 +1,105 @@
+<!--
+  Generated template for the CartPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar class="show-back-button">
+    <ion-title *ngIf="!cartLength">My Bag</ion-title>
+    <ion-title *ngIf="(cartLength==1)?{ title: 'item in cart'}:(cartLength > 1)?{title: 'items in cart'}:''; let variable"> {{cartLength}} {{variable.title}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding *ngIf="cartLength">
+  <ion-item>
+    <p class="address" (click)="changeAddress()">Change</p>
+    <p>
+      <strong>Delivery To</strong>
+    </p>
+    <br>
+    <ion-list>
+      <p>
+        <strong>{{defaultAddr?.full_name | titlecase}}</strong>
+      </p>
+      <p>{{defaultAddr?.address2}}</p>
+      <p>{{defaultAddr?.city | titlecase}} - {{defaultAddr?.postal_code}},{{defaultAddr?.state | titlecase}}</p>
+      <p>Mobile : +91-{{defaultAddr?.contact_number}}</p>
+    </ion-list>
+  </ion-item>
+  <ion-list class="cart-list">
+    <ion-item *ngFor="let cartitem of cartitems; let i = index">
+      <ion-thumbnail item-start>
+        <img [src]="server_api+cartitem?.product?.product_img" onError="this.src='assets/imgs/noimage.png'">
+      </ion-thumbnail>
+      <ion-row>
+        <ion-col class="btn" col-6>
+          <p>{{cartitem?.product?.product_name}}</p>
+          <ion-row>
+            <ion-col>
+              <ion-icon ios="ios-trash" md="md-trash" *ngIf="cartitem?.pcount == 1;else otherBlock" (click)="remove(cartitem.id,i)"></ion-icon>
+              <ng-template #otherBlock>
+                <ion-icon ios="ios-remove" md="md-remove" (click)="reduce(cartitem?.product?.id,i)"></ion-icon>
+              </ng-template>
+            </ion-col>
+            <ion-col>
+              <p>{{cartitem?.pcount}}</p>
+            </ion-col>
+            <ion-col>
+              <ion-icon ios="ios-add" md="md-add" (click)="add(cartitem?.product?.id,i)"></ion-icon>
+            </ion-col>
+          </ion-row>
+        </ion-col>
+        <ion-col class="currency-col" col-6>
+          <p class="currency">{{cartitem?.product?.cost | currency:'INR':'symbol':'1.2-2'}}</p>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+  </ion-list>
+  <ion-item>
+    <h6>
+      <b>Payment Summary</b>
+    </h6>
+    <ion-row>
+      <ion-col col-8>
+        <p>Subtotal : </p>
+      </ion-col>
+      <ion-col style="text-align: end;">
+        <p class="currency">{{subTotal | currency:'INR':'symbol':'1.2-2'}}</p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-8>
+        <p>Shipping Charges : </p>
+      </ion-col>
+      <ion-col style="text-align: end;">
+        <p class="currency">{{shippingCharges | currency:'INR':'symbol':'1.2-2'}}</p>
+      </ion-col>
+    </ion-row>
+  </ion-item>
+  <ion-item no-lines>
+    <ion-row>
+      <ion-col col-8>
+        <p>Total:</p>
+      </ion-col>
+      <ion-col style="text-align: end">
+        <p class="currency">{{total | currency:'INR':'symbol':'1.2-2'}}</p>
+      </ion-col>
+    </ion-row>
+  </ion-item>
+</ion-content>
+<ion-content *ngIf="!cartLength">
+  <div class="empty-bag">
+    <img alt="empty_cart" class="circle" src="assets/imgs/empty-cart.png">
+    <h4>Your Bag is Empty!</h4>
+    <p>Get some amazing products & offers</p><br>
+    <button ion-button medium (click)="startshopping()">Start Shopping</button>
+  </div>
+</ion-content>
+<ion-footer >
+  <button ion-button large full *ngIf="default_addr == ''">CHECK OUT</button>
+  <button ion-button large full *ngIf="default_addr !== '' && cartLength ">PLACE ORDER</button>
+</ion-footer>

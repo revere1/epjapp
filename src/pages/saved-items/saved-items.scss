@@ -1,0 +1,21 @@
+page-saved-items {
+    .watchlist-img img {
+     height: 80px !important; 
+     padding-right: 0px !important;
+    }
+    ion-content.watchlist.content {
+        background-color: #ecf0f5 !important;
+    }
+    .scroll-content {
+        margin-top: 70px !important;
+    }
+    .card {
+        box-shadow : none !important;
+        margin-top: 10px !important;
+        margin:0px !important;
+        width: 100% !important;
+    }
+    .watchlist .item p {
+        line-height: 1.5;
+    }
+}

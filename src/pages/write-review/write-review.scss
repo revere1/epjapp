@@ -1,0 +1,24 @@
+page-write-review {
+    .toolbar {
+        border-bottom: 1px solid lightgray;
+    }
+    .button-round {
+        background-color: #4eb950;
+        padding: 0px 8.7rem;
+        margin-top:50px;
+    }
+    .scroll-content {
+        text-align: center;
+    }
+    .button {
+        box-shadow:  none !important;
+    }
+    .button.activated {
+        background-color: #4eb950 !important;
+    }
+   .icon-size ion-icon {
+        margin-top: 33px !important;
+        color: #dedede;
+        font-size: 2.5rem !important;
+    }
+}

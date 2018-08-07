@@ -1,0 +1,30 @@
+page-reviews {
+    p {
+        text-align: justify;
+        -webkit-margin-before: 0em;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+    .scroll-content {
+        padding: 0px !important; 
+        margin-top:110px !important;
+    }
+    .item img {
+        width: 30px !important;
+        height: 30px !important;
+    }
+    .list-md .item-block .item-inner {
+        border-bottom: 0px solid #dedede; 
+    }
+    .item-md.item-block .item-inner {
+        border-bottom: 0px solid #dedede; 
+    }
+    .ion-text-avatar {
+        background: black;
+        font-size: smaller;
+    }
+    .item ion-avatar ion-text-avatar {
+        width: 35px;
+        height: 35px;
+    }
+}

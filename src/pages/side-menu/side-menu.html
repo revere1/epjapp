@@ -1,0 +1,67 @@
+<ion-menu [content]="content" [swipeEnabled]="false">
+  <ion-content class="background">
+    <div class="menu-list">
+      <ion-row>
+        <ion-col class="arrow" menuClose>
+          <img src="assets/imgs/arrow.svg">
+        </ion-col>
+        <ion-col (click)="profile()" menuClose>
+          <ion-avatar item-start class="profile-pic">
+            <ion-text-avatar>{{initials}}</ion-text-avatar>
+          </ion-avatar>
+        </ion-col>
+        <ion-col>
+          <ion-buttons end>
+            <button menuClose ion-button icon-start clear class="settings">
+              <ion-icon ios="ios-settings" md="md-settings"></ion-icon>
+            </button>
+          </ion-buttons>
+        </ion-col>
+      </ion-row>
+      <h3>{{currentUserName | titlecase}}</h3>
+    </div>
+    <ion-list class="list-btn">
+      <ion-list-header>My Information</ion-list-header>
+      <hr>
+      <button menuClose ion-item *ngFor="let p of myPages" (click)="openPage(p)">
+        <div>
+          <img [src]="[p.icon]">
+          <span>{{p.title}}</span>
+        </div>
+      </button>
+    </ion-list>
+    <ion-list class="list-btn">
+      <ion-list-header>Other Information</ion-list-header>
+      <hr>
+      <button menuClose ion-item *ngFor="let p of otherPages" (click)="openPage(p)">
+        <div>
+          <img [src]="[p.icon]">
+          <span>{{p.title}}</span>
+        </div>
+      </button>
+    </ion-list>
+    <div class="footer-imgs">
+      <ion-row>
+        <ion-col>
+          <ion-buttons start class="footer-btn" style="padding-left: 15px;">
+            <button ion-button icon-start clear small menuClose>
+              <img src="assets/imgs/rateus.svg">
+            </button>
+            <br>
+            <p>Rate Us</p>
+          </ion-buttons>
+        </ion-col>
+        <ion-col (click)=logout()>
+          <ion-buttons end class="footer-btn" style="padding-right: 15px;">
+            <button ion-button icon-start clear small menuClose>
+              <img src="assets/imgs/logout.svg">
+            </button>
+            <br>
+            <p menuClose>Logout</p>
+          </ion-buttons>
+        </ion-col>
+      </ion-row>
+    </div>
+  </ion-content>
+</ion-menu>
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

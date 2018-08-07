@@ -1,0 +1,89 @@
+<!--
+  Generated template for the CategoriesItemsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{categoryName | titlecase}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-row>
+    <ion-card (click)="prodctView(product.id)" *ngFor="let product of products">
+      <ion-col>
+        <div>
+          <img [src]="server_api+product.product_img" style="max-height: 130px;"  onError="this.src='assets/imgs/noimage.png'">
+        </div>
+        <div>
+          <p>{{product.product_name}}</p>
+          <p style="color: #2f9a4f;">{{product.cost | currency:'INR'}}</p>
+        </div>
+      </ion-col>
+    </ion-card>
+    <!-- <ion-card>
+      <ion-col>
+        <div>
+          <img src="assets/imgs/rudra2.jpg" style=" max-height: 130px;" />
+        </div>
+        <div>
+          <p>Rudraksha Mala with 53 Beeds and 4 Face Rudraksha Beed</p>
+          <p style="color: #2f9a4f;">₹7,000.00</p>
+        </div>
+      </ion-col>
+    </ion-card>
+  </ion-row>
+  <ion-row>
+    <ion-card>
+      <ion-col>
+        <div>
+          <img src="assets/imgs/rudra3.jpg" style="    max-height: 130px;" />
+        </div>
+        <div>
+          <p>  Rudraksha Mala (3 MM) </p>
+          <p style="color: #2f9a4f;">₹2,500.00</p>
+        </div>
+      </ion-col>
+    </ion-card>
+    <ion-card>
+      <ion-col>
+        <div>
+          <img src="assets/imgs/rudra4.jpg" style=" max-height: 130px;" />
+        </div>
+        <div>
+          <p>Rudraksha Mala (4 MM)</p>
+          <p style="color: #2f9a4f;">₹2,200.00</p>
+        </div>
+      </ion-col>
+    </ion-card>
+  </ion-row>
+  <ion-row>
+    <ion-card>
+      <ion-col>
+        <div>
+          <img src="assets/imgs/rudra5.jpg" style="    max-height: 130px;" />
+        </div>
+        <div class="text-alignment">
+          <p>Rudraksha Mala (7 MM)</p>
+          <p style="color: #2f9a4f;">₹750.00</p>
+        </div>
+      </ion-col>
+    </ion-card>
+    <ion-card>
+      <ion-col>
+        <div>
+          <img src="assets/imgs/rudra6.jpg" style=" max-height: 130px;" />
+        </div>
+        <div class="text-alignment">
+          <p>Rudraksha Mala (10 MM)</p>
+          <p style="color: #2f9a4f;">₹450.00</p>
+        </div>
+      </ion-col>
+    </ion-card> -->
+  </ion-row>
+</ion-content>

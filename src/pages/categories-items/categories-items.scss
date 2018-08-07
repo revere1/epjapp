@@ -1,0 +1,25 @@
+page-categories-items {
+    .card {
+        width:47%;
+        margin: 5px;
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+    }
+    .card + ion-card {
+        margin-top: 8px;
+    }
+    .scroll-content {
+        padding:5px !important;
+    }
+    ion-card.card {
+        min-height: 200px;
+    }
+    .card p {
+        font-size: 1.2rem;
+        margin: 0px 8px 2px;
+    }
+    .card-wp {        
+        width:46%;
+        margin: 5px;
+        border-radius: 10px;
+    }
+}

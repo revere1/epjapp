@@ -1,0 +1,33 @@
+page-index {
+    .img-position {
+        height:80px;
+        margin-top: 100px;
+        margin-bottom: 60px;
+    }
+    .btn-signin {
+        background-color: #4eb950;
+    }
+    .button-round {
+        padding: 0px 8.7rem;
+        // margin-left: 53px;
+        // margin-bottom: 10px;
+    }
+    .button-outline {
+        border-color: #4eb950;
+        color: #4eb950;
+        padding: 0px 8.4rem;
+        margin-bottom: 10px;
+    }
+    .scroll-content {
+        text-align: center;
+    }
+    .button {
+        box-shadow:  none !important;
+    }
+    .button.activated {
+        background-color: #4eb950 !important;
+    }
+    .button-outline.activated {
+        background-color:transparent !important;
+    }
+}

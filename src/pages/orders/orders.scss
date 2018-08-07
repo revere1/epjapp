@@ -1,0 +1,49 @@
+page-orders {
+    .list-header {
+        padding-left: 16px;
+        margin-bottom: 0px;
+        min-height: 0rem;
+        border-bottom: 1px solid #dedede;
+        font-size: 1.4rem;
+        color: #757575;
+        border-top:0px;
+    }
+    .col {
+        text-align: center;
+    }
+    .list-header p {
+        float: right;
+        font-size: 1rem;
+        margin: 2px 0px;
+    }
+    .content {
+        background-color: #f8f8f8 !important;
+    }
+    .toolbar-background {
+        background:white;
+    }
+    .card {
+        box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.14), 0 -1px 1px -4px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+        border-radius: 5px;
+        margin-bottom: 20px;
+    }
+    .button-outline {
+        border-width: 0.5px;
+        border-color: #4eb950;
+        color: #4eb950;
+    }
+    .count {
+        position: absolute;
+        width: 18px;
+        height: 18px;
+        top: -3px;
+        left: 11px;
+        background: #f8631a;
+        font-size: 1.2rem;
+        color: #ffffff;
+        text-align: center;
+        border-radius: 50%;
+        line-height: 1.7rem;
+        border: 0.5px solid #fff;
+    }
+}

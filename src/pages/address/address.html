@@ -1,0 +1,65 @@
+<!--
+  Generated template for the AddressPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button icon-start clear menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title *ngIf="change">Select Delivery Address</ion-title>
+    <ion-title *ngIf="!change">Saved Address</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding *ngIf="!change">
+  <ion-list *ngFor="let address of addresses">
+    <p>{{address.full_name | titlecase}}</p>
+    <p>{{address.address1}}</p>
+    <p>{{address.address2}}</p>
+    <p>{{address.city | titlecase}} - {{address.postal_code}}</p>
+    <p>{{address.state | titlecase}}</p>
+    <p>Mobile : +91-{{address.contact_number}}</p>
+    <ion-row>
+      <ion-col>
+        <button ion-button outline medium>Edit</button>
+      </ion-col>
+      <ion-col>
+        <button ion-button outline medium>Remove</button>
+      </ion-col>
+    </ion-row>
+  </ion-list>
+</ion-content>
+<ion-content *ngIf="change" class="delivery">
+  <ion-list radio-group>
+    <ion-card *ngFor="let address of addresses">
+      <ion-item>
+        <ion-radio [value]="address" item-left (click)="default()">
+        </ion-radio>
+        <ion-label>
+          <p>
+            <b>{{address.full_name | titlecase}}</b>
+          </p>
+          <p>{{address.address1}}</p>
+          <p>{{address.address2}}</p>
+          <p>{{address.city | titlecase}} - {{address.postal_code}}</p>
+          <p>{{address.state | titlecase}}</p>
+          <p>Mobile : +91-{{address.contact_number}}</p>
+        </ion-label>
+      </ion-item>
+    </ion-card>
+  </ion-list>
+</ion-content>
+
+<ion-footer>
+  <button ion-item (click)="addAddress()">
+    <i class="fa fa-plus" aria-hidden="true" item-left></i>
+    Add a Delivery Address
+    <i class="fa fa-chevron-right" aria-hidden="true"></i>
+  </button>
+</ion-footer>
