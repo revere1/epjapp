@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Global } from '../../Global';
 import { Http } from '@angular/http';
 import { Storage } from '@ionic/storage';
+import { CartPage } from '../cart/cart';
 
 /**
  * Generated class for the OrdersPage page.
@@ -46,5 +47,8 @@ export class OrdersPage{
           alert(result.message);
         }
       });
+  }
+  cart() {
+    this.navCtrl.push(CartPage);
   }
 }

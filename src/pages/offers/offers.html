@@ -13,6 +13,25 @@
 </ion-header>
 
 
-<ion-content padding>
-
+<ion-content padding class="offers">
+  <ion-list *ngFor="let offer of offers;let i = index">
+    <ion-card>
+      <ion-item>
+        <ion-row class="offers-img">
+          <ion-col class="btn" col-4>
+            <ion-thumbnail item-start>
+              <img [src]="server_api+offer?.offer_img" onError="this.src='assets/imgs/noimage.png'">
+            </ion-thumbnail>
+          </ion-col>
+          <ion-col class="btn" col-8>
+            <p>{{offer?.offer_name}}</p>
+            <p class="currency">{{offer?.discount_value | currency:'INR':'symbol':'1.0-2'}}</p>
+            <p>{{offer?.desc}}</p>
+          </ion-col>
+        </ion-row>
+      </ion-item>
+      <hr>
+      <p>Promo Code:{{offer?.offer_code}}</p>
+    </ion-card>
+  </ion-list>
 </ion-content>

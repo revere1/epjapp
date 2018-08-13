@@ -24,7 +24,7 @@ export class AddressPage {
   result: any;
   addresses: any;
   currentUser: any;
-  public change : boolean = false;;
+  public change: boolean = false;;
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
     private http: Http,
@@ -56,7 +56,7 @@ export class AddressPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad AddressPage');
   }
-  default() {
+  default(addrId) {
     const confirm = this.alertCtrl.create({
       title: 'Set as default',
       message: 'Do you want to set this address as your default address?',
@@ -70,12 +70,50 @@ export class AddressPage {
         {
           text: 'Yes',
           handler: () => {
-            this.navCtrl.push(CartPage);
+            let updateAddr = {
+              'addrid': addrId,
+              'default_address': 1,
+              'token': this.token,
+            }
+            this.http.put(`${Global.SERVER_URL}update-addr`, updateAddr)
+              .subscribe(data => {
+                let result = JSON.parse(data["_body"])
+                if (result.success) {
+                  this.navCtrl.push(CartPage);
+                } else {
+                  const alert = this.alertCtrl.create({
+                    title: 'Alert',
+                    subTitle: result.message,
+                    buttons: ['OK']
+                  });
+                  alert.present();
+                  this.navCtrl.push(CartPage);
+                }
+              }, err => {
+                alert("Server Busy");
+              });
           }
         }
       ]
     });
     confirm.present();
   }
-
+  remove(index, id) {
+    let addremoveObj = {
+      'addrid': id,
+      'token': this.token
+    }
+    console.log(addremoveObj)
+    this.http.post(`${Global.SERVER_URL}remove-from-addr`, addremoveObj)
+      .subscribe(data => {
+        let result = JSON.parse(data["_body"])
+        if (result.success) {
+          this.addresses.splice(index, 1);
+        } else {
+          alert(result.message);
+        }
+      }, err => {
+        alert("Server Busy");
+      });
+  }
 }

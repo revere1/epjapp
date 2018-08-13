@@ -14,7 +14,7 @@
 
 
 <ion-content class="watchlist">
-  <ion-list *ngFor="let savedItem of savedItems">
+  <ion-list *ngFor="let savedItem of savedItems;let i = index">
     <ion-card>
       <ion-item>
         <ion-row class="watchlist-img">
@@ -29,6 +29,19 @@
           </ion-col>
         </ion-row>
       </ion-item>
+      <hr>
+      <ion-row class="buttons">
+        <ion-col (click)="remove(i,savedItem.id)">
+          <p>
+            Remove
+          </p>
+        </ion-col>
+        <ion-col (click)="movetocart(i,savedItem.product?.id,savedItem.id)">
+          <p>
+            Move to Bag
+          </p>
+        </ion-col>
+      </ion-row>
     </ion-card>
   </ion-list>
 </ion-content>

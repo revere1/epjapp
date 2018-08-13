@@ -15,7 +15,7 @@
       <button ion-button clear>
         <ion-icon name="search"></ion-icon>
       </button>
-      <button ion-button clear>
+      <button ion-button clear (click)="cart()">
         <ion-icon name="cart"></ion-icon>
         <div class="count" *ngIf="cartCount">{{cartCount}}</div>
       </button>

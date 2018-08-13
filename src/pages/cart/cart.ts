@@ -76,6 +76,7 @@ export class CartPage {
           this.subTotal -= this.cartitems[index].product.cost;
           this.total =  this.subTotal + this.shippingCharges;
           this.cartitems.splice(index,1);
+          this.cartLength = this.cartitems.length;       
         } else {
           alert(result.message);
         }
@@ -97,6 +98,7 @@ export class CartPage {
           this.cartitems[index].pcount -= 1;
           this.subTotal -= this.cartitems[index].product.cost;
           this.total =  this.subTotal + this.shippingCharges;
+
         } else {
           alert(this.result.message);
         }
@@ -117,6 +119,7 @@ export class CartPage {
         if (result.success) {    
           this.cartitems[index].pcount += 1;    
           this.subTotal += parseInt(this.cartitems[index].product.cost);
+          this.total =  this.subTotal + this.shippingCharges;
         } else {
           const alert = this.alertCtrl.create({
             title: 'Alert',

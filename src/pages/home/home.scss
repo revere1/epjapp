@@ -7,9 +7,6 @@ page-home {
         border-left:  0.5px solid #ececec;
         border-bottom: 0.5px solid #ececec;
     }
-    // .content .row {
-    //     border-bottom: 0.5px solid #ececec;
-    // }
     .content .col:nth-child(4n+1) {
         border-left: none;
     }
@@ -55,9 +52,6 @@ page-home {
     p {
         font-size: 10px !important;
     }
-    // .searchbar {
-    //     margin-bottom: 7px;
-    // }
     .card {
         width:46%;
         margin: 5px;
@@ -82,13 +76,20 @@ page-home {
     .scroll-zoom-wrapper {
         white-space: nowrap;
     }
-
-    ion-scroll {
+    ion-scroll.special-items.scroll-x {
         min-height: 220px; 
         height: auto;
             .scroll-content {
             padding: 0px !important;
         }    
+    }
+    ion-scroll.banners.scroll-x {
+        min-height: 100px; 
+        height: auto;
+            .scroll-content {
+            padding: 0px !important;
+        } 
+        margin-top: 10px;   
     }
     .searchbar-has-value.searchbar-has-focus{
         .searchbar-search-icon {

@@ -24,9 +24,6 @@ page-address {
         -webkit-margin-after: 0.5em;
         color: gray;
     }
-    ion-list {
-        border-bottom: 1px solid lightgray;
-    }
     .icon-p {
         text-align: right;
         margin-top: -25px;
@@ -38,9 +35,28 @@ page-address {
         top: -45px !important;
     }
     .card {
-     box-shadow : none !important;
+        box-shadow : none !important;
+        margin-top: 10px !important;
+        margin:0px !important;
+        width: 100% !important;
     }
     ion-content.delivery.content {
         background-color: #ecf0f5 !important;
+    }
+    .address hr {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        background-color: #c8c7cc !important;
+    }
+    .buttons p {
+        color: #427feb;
+        text-align: center;
+    }
+    ion-content.address.content {
+        background-color: #ecf0f5 !important;
+    }
+    .scroll-content {
+        margin-top: 70px !important;
+        padding: 0 !important;
     }
 }

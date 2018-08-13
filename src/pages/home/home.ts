@@ -7,6 +7,7 @@ import { Http } from '@angular/http';
 import { SigninPage } from '../signin/signin';
 import { Storage } from '@ionic/storage';
 import { CartPage } from '../cart/cart';
+import { ProductViewPage } from '../product-view/product-view';
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
@@ -18,6 +19,7 @@ export class HomePage {
   public cartCount: any;
   public currentUserId: any;
   server_api = Global.BASE_API;
+  public banners : any;
   constructor(public navCtrl: NavController,
     private http: Http,
     private storage: Storage) {
@@ -39,6 +41,16 @@ export class HomePage {
           this.categories = this.result.data;
         } else {
           alert(this.result.message);
+        }
+      });
+      this.http.post(`${Global.SERVER_URL}banners`, {
+        'token': this.token
+      }).subscribe(data => {
+        this.result = JSON.parse(data["_body"]);
+        if (this.result.success) 
+        {
+           this.banners = this.result.banners;
+           console.log(this.banners)
         }
       });
     }).catch(err => {
@@ -65,5 +77,17 @@ export class HomePage {
           this.cartCount = this.result.count;
         }
       });
+  }
+  move(btype,id){
+    if(btype == 1)
+    {
+      this.storage.set('categoryId', id)
+      this.navCtrl.push(CategoriesItemsPage);
+    }
+    else 
+    {
+      this.storage.set('productId', id)
+      this.navCtrl.push('ProductViewPage');
+    }
   }
 }

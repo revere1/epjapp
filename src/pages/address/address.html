@@ -17,29 +17,38 @@
 </ion-header>
 
 
-<ion-content padding *ngIf="!change">
-  <ion-list *ngFor="let address of addresses">
-    <p>{{address.full_name | titlecase}}</p>
-    <p>{{address.address1}}</p>
-    <p>{{address.address2}}</p>
-    <p>{{address.city | titlecase}} - {{address.postal_code}}</p>
-    <p>{{address.state | titlecase}}</p>
-    <p>Mobile : +91-{{address.contact_number}}</p>
-    <ion-row>
-      <ion-col>
-        <button ion-button outline medium>Edit</button>
-      </ion-col>
-      <ion-col>
-        <button ion-button outline medium>Remove</button>
-      </ion-col>
-    </ion-row>
+<ion-content padding *ngIf="!change"  class="address">
+  <ion-list *ngFor="let address of addresses;let i = index">
+    <ion-card>
+      <ion-item>
+        <p>{{address.full_name | titlecase}}</p>
+        <p>{{address.address1}}</p>
+        <p>{{address.address2}}</p>
+        <p>{{address.city | titlecase}} - {{address.postal_code}}</p>
+        <p>{{address.state | titlecase}}</p>
+        <p>Mobile : +91-{{address.contact_number}}</p>
+      </ion-item>
+      <hr>
+      <ion-row class="buttons">
+        <ion-col (click)="remove(i,address.id)">
+          <p>
+            Remove
+          </p>
+        </ion-col>
+        <ion-col (click)="edit()">
+          <p>
+            Edit
+          </p>
+        </ion-col>
+      </ion-row>
+    </ion-card>
   </ion-list>
 </ion-content>
 <ion-content *ngIf="change" class="delivery">
   <ion-list radio-group>
     <ion-card *ngFor="let address of addresses">
       <ion-item>
-        <ion-radio [value]="address" item-left (click)="default()">
+        <ion-radio [value]="address" item-left (click)="default(address.id)">
         </ion-radio>
         <ion-label>
           <p>

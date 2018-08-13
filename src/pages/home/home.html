@@ -10,7 +10,7 @@
       </ion-col>
       <ion-col center text-center>
         <button ion-button icon-start clear small>
-          <img src="assets/imgs/search-icon.svg" style="margin-top: -7px;height: 30px;">
+          <img src="assets/imgs/search-icon.svg" onError="this.src='assets/imgs/noimage.png'">
         </button>
       </ion-col>
       <ion-col>
@@ -40,18 +40,16 @@
       <img src="assets/imgs/down-arrow.svg" class="arrow" (click)="allCategories()">
     </div>
   </ion-grid>
-
-  <div style="margin-top: 10px;">
-    <img src="assets/imgs/add.jpg">
-  </div>
-
+  <ion-scroll scrollX="true" direction="x" class="banners">
+      <img *ngFor="let banner of banners" [src]="server_api+banner?.banner"  onError="this.src='assets/imgs/noimage.png'" (click)="move(banner?.btype,banner?.btype_id)">
+  </ion-scroll>
   <ion-label>
     <span style="float: left;">
       <b>SPECIAL ITEMS </b>
     </span>
     <a style="float: right;">View All</a>
   </ion-label>
-  <ion-scroll scrollX="true" direction="x">
+  <ion-scroll scrollX="true" direction="x" class="special-items">
     <ion-card>
       <ion-col>
         <div>

@@ -1,6 +1,6 @@
 
-const serverURI =  'http://192.168.2.6:1332/app/' 
-const apiURI  =  'http://192.168.2.6:1332/' 
+const serverURI =  'http://localhost:1332/app/' 
+const apiURI  =  'http://localhost:1332/' 
 
 export const Global = {
   SERVER_URL:serverURI,

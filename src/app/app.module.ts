@@ -26,6 +26,8 @@ import { IonicStorageModule } from '@ionic/storage';
 import { SocialSharing } from '@ionic-native/social-sharing';
 import { CartProvider } from '../providers/cart/cart';
 import { SavedItemsPage } from '../pages/saved-items/saved-items';
+import { AboutusPage } from '../pages/aboutus/aboutus';
+import { ContactusPage } from '../pages/contactus/contactus';
 
 @NgModule({
   declarations: [
@@ -45,6 +47,8 @@ import { SavedItemsPage } from '../pages/saved-items/saved-items';
     IonTextAvatar,
     SideMenuPage,
     SavedItemsPage,
+    AboutusPage,
+    ContactusPage
     // SigninPage,
     // SignupPage
   ],
@@ -71,7 +75,9 @@ import { SavedItemsPage } from '../pages/saved-items/saved-items';
     CartPage,
     WalletPage,
     SideMenuPage,
-    SavedItemsPage
+    SavedItemsPage,
+    AboutusPage,
+    ContactusPage
     // SigninPage,
     // SignupPage
   ],
